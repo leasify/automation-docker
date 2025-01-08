@@ -78,6 +78,7 @@ services:
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     volumes:
       - n8n_data:/home/forge/.n8n
+      - /home/forge/.n8n:/files
 
 volumes:
   traefik_data:
