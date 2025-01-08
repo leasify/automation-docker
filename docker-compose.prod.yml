@@ -59,7 +59,7 @@ services:
       - traefik.http.routers.n8n.rule=Host(`${SUBDOMAIN}.${DOMAIN_NAME}`)
       - traefik.http.routers.n8n.tls=true
       - traefik.http.routers.n8n.entrypoints=https
-      - traefik.http.routers.n8n.tls.certresolver=mytlschallenge
+      - traefik.http.routers.n8n.tls.certresolver=leresolver
       - traefik.http.middlewares.n8n.headers.SSLRedirect=true
       - traefik.http.middlewares.n8n.headers.STSSeconds=315360000
       - traefik.http.middlewares.n8n.headers.browserXSSFilter=true
@@ -78,7 +78,6 @@ services:
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
     volumes:
       - n8n_data:/home/forge/.n8n
-      - /home/forge/.n8n:/files
 
 volumes:
   traefik_data:
