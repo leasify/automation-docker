@@ -77,7 +77,7 @@ services:
       - DB_POSTGRESDB_USER=${POSTGRES_NON_ROOT_USER}
       - DB_POSTGRESDB_PASSWORD=${POSTGRES_NON_ROOT_PASSWORD}
     volumes:
-      - n8n_data:/home/forge/.n8n
+      - n8n_data:/home/node/.n8n
     depends_on:
       postgres:
         condition: service_healthy
